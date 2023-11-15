@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('bnb_id');
             $table->string('name');
             $table->timestamps();
+
+            $table->foreign('bnb_id')->references('id')->on('bnbs')->onDelete('cascade');
         });
     }
 
