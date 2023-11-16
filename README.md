@@ -1,16 +1,5 @@
 # 專案筆記
 
-## 參考文件
-從 Git 複製後如何設定 Laravel 項目:
-```
-https://mohasin-dev.medium.com/how-to-setup-laravel-project-after-cloning-from-git-2b8486bee257
-```
-RESTful Web API 设计:
-```
-切記 RESTful API 設計路由記得使用資料本原來思考設計, 因爲我們通常以功能性去思考，路由上設計可能會以功能上設計
-比如 /top-Bnbs 或者 /getBnbsTop
-https://learn.microsoft.com/zh-cn/azure/architecture/best-practices/api-design
-```
 ## 取得專案過後需要運行的指令
 
 ### 第1步 git clone 專案過後:
@@ -47,9 +36,66 @@ php artisan serve 或
 php artisan ser 或
 php artisanserve — port=8080
 ```
+### 第 7 步 使用請求 api
+
+1. http method: 
+   - GET
+2. endpoint: 
+   - /api/Bnbs/top
+3. request:
+   - query parameters
+        ```json
+        {
+            "currency":  "TWD",
+            "start_date": "2023-05-01",
+            "department": "2023-06-01",
+            "end_date": 3,
+            "limit": 1,
+        }
+        ```
+    - body
+        ```json
+        ```
+4. response:
+   - status code
+     - 200
+    - body
+        ```json
+        {
+            "success": true,
+            "message": "Data retrieved successfully.",
+            "top_bnbs": [
+                {
+                    "bnb_id": 7,
+                    "bnb_name": "Fahey-Moore",
+                    "total_amount": "3559.46"
+                },
+                {
+                    "bnb_id": 6,
+                    "bnb_name": "Gleason, Lesch and McGlynn",
+                    "total_amount": "3305.08"
+                },
+                {
+                    "bnb_id": 5,
+                    "bnb_name": "Hartmann-Runolfsson",
+                    "total_amount": "1944.36"
+                },
+                {
+                    "bnb_id": 3,
+                    "bnb_name": "Hoppe, Spinka and Lemke",
+                    "total_amount": "1755.54"
+                },
+                {
+                    "bnb_id": 4,
+                    "bnb_name": "Batz-Gleason",
+                    "total_amount": "1529.36"
+                }
+            ]
+        }
+        ```
 ---
 
-## 創建文件指令
+## 創建文件使用到的指令
 
 ### 1. 資料表遷移(migrations) 表格順序第一個優先因爲有關聯表
 創建資料表遷移 (migrations)。
@@ -104,4 +150,15 @@ php artisan make:test OrderTest
 #### 創建資料填充：
 ```
 php artisan make:seeder BnbsSeeder
+```
+## 參考文件
+從 Git 複製後如何設定 Laravel 項目:
+```
+https://mohasin-dev.medium.com/how-to-setup-laravel-project-after-cloning-from-git-2b8486bee257
+```
+RESTful Web API 设计:
+```
+切記 RESTful API 設計路由記得使用資料本原來思考設計, 因爲我們通常以功能性去思考，路由上設計可能會以功能上設計
+比如 /top-Bnbs 或者 /getBnbsTop
+https://learn.microsoft.com/zh-cn/azure/architecture/best-practices/api-design
 ```
