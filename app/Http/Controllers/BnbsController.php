@@ -13,11 +13,11 @@ use App\Service\BnbsService;
 class BnbsController extends Controller
 {
     /**
-     * 根据指定条件获取排名前列的旅宿信息。
+     * 根據指定條件取得排名前列的旅宿資訊。
      *
-     * @param Request $request 请求实例，包含查询参数。
-     * @param BnbsService $bnbsService 用于处理旅宿相关数据的服务。
-     * @return \Illuminate\Http\JsonResponse 返回查询结果的 JSON 响应。
+     * @param Request $request 請求實例，包含查詢參數。
+     * @param BnbsService $bnbsService 用於處理旅宿相關數據的服務。
+     * @return \Illuminate\Http\JsonResponse 傳回查詢結果的 JSON 回應。
      */
     public function getTopBnbs(Request $request, BnbsService $bnbsService)
     {
@@ -36,7 +36,7 @@ class BnbsController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'success' => false,
-                'message' => $validator->errors()->first()
+                'msg' => $validator->errors()->first()
             ], 422);
         }
 

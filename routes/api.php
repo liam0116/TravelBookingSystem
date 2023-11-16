@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 // Controllers
 use App\Http\Controllers\BnbsController;
+use App\Http\Controllers\CurrencyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ use App\Http\Controllers\BnbsController;
 * restful api 规范
 */
 Route::get('/Bnbs/top', [BnbsController::class, 'getTopBnbs']);
+Route::get('/currency/convert', [CurrencyController::class, 'convert']);
