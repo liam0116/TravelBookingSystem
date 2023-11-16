@@ -38,6 +38,7 @@ php artisanserve — port=8080
 ```
 ### 第 7 步 使用請求 api
 
+#### 取得付款最高的前10的旅社
 1. http method: 
    - GET
 2. endpoint: 

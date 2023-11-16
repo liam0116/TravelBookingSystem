@@ -4,8 +4,20 @@ namespace App\Service;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * BnbsService 类提供了与旅宿相关的业务逻辑。
+ */
 class BnbsService
 {
+    /**
+     * 获取特定条件下排名前列的旅宿信息。
+     *
+     * @param string $currency 货币类型 (例如: 'TWD', 'JPY', 'USD')。
+     * @param string $startDate 开始日期，格式为 'Y-m-d'。
+     * @param string $endDate 结束日期，格式为 'Y-m-d'。
+     * @param int $limit 返回结果的数量限制。
+     * @return \Illuminate\Http\JsonResponse 返回包含旅宿信息的 JSON 响应。
+     */
     public function getTopBnbs(string $currency, string $startDate, string $endDate, int $limit)
     {
         try {
