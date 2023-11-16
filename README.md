@@ -5,6 +5,12 @@
 ```
 https://mohasin-dev.medium.com/how-to-setup-laravel-project-after-cloning-from-git-2b8486bee257
 ```
+RESTful Web API 设计:
+```
+切記 RESTful API 設計路由記得使用資料本原來思考設計, 因爲我們通常以功能性去思考，路由上設計可能會以功能上設計
+比如 /top-Bnbs 或者 /getBnbsTop
+https://learn.microsoft.com/zh-cn/azure/architecture/best-practices/api-design
+```
 ## 取得專案過後需要運行的指令
 
 ### 第1步 git clone 專案過後:
