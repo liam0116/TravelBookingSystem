@@ -24,6 +24,7 @@ php artisan migrate
 ```
 ### 第4步 單元測試(學習中):
 ```
+執行看看api有沒有正常運作
 php artisan test
 ```
 ### 第5步 資料表沒數據執行，資料庫填充器生成模擬數據 (Seeder 學習中):
@@ -38,7 +39,7 @@ php artisanserve — port=8080
 ```
 ### 第 7 步 使用請求 api
 
-#### -【取得付款最高的前10的旅社】
+#### -【取得付款最高的前10的旅社 API】
 1. http method: 
    - GET
 2. endpoint: 
@@ -64,34 +65,63 @@ php artisanserve — port=8080
         ```json
         {
             "success": true,
-            "message": "Data retrieved successfully.",
+            "msg": "Data retrieved successfully.",
             "top_bnbs": [
                 {
                     "bnb_id": 7,
                     "bnb_name": "Fahey-Moore",
-                    "may_amount": "3559.46"
+                    "may_amount": "3,559.46"
                 },
                 {
                     "bnb_id": 6,
                     "bnb_name": "Gleason, Lesch and McGlynn",
-                    "may_amount": "3305.08"
+                    "may_amount": "3,305.08"
                 },
                 {
                     "bnb_id": 5,
                     "bnb_name": "Hartmann-Runolfsson",
-                    "may_amount": "1944.36"
+                    "may_amount": "1,944.36"
                 },
                 {
                     "bnb_id": 3,
                     "bnb_name": "Hoppe, Spinka and Lemke",
-                    "may_amount": "1755.54"
+                    "may_amount": "1,755.54"
                 },
                 {
                     "bnb_id": 4,
                     "bnb_name": "Batz-Gleason",
-                    "may_amount": "1529.36"
+                    "may_amount": "1,529.36"
                 }
             ]
+        }
+        ```
+
+#### -【匯率轉換 API】
+1. http method: 
+   - GET
+2. endpoint: 
+   - /api/currency/convert
+3. request:
+   - query parameters
+        ```json
+        {
+            "source":  "USD",
+            "target": "JPY",
+            "amount": "1525"
+        }
+        ```
+    - body
+        ```json
+        ```
+4. response:
+   - status code
+     - 200
+    - body
+        ```json
+        {
+            "success": true,
+            "msg": "success",
+            "amount": "170,496.53"
         }
         ```
 ---
@@ -142,11 +172,18 @@ php artisan make:factory OrdersFactory --model=Orders
 ```
 
 ### 4. 創建測試類別
-#### Order 測試：
+#### Order 測試資料寫入：
 ```
 php artisan make:test OrderTest
 ```
-
+#### BnbsController 測試：
+```
+php artisan make:test BnbsControllerTest
+```
+#### CurrencyController 測試：
+```
+php artisan make:test CurrencyControllerTest
+```
 ### 5. 資料填充器創建文件指令 (Seeder):
 #### 創建資料填充：
 ```
