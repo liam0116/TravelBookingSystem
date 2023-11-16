@@ -38,7 +38,7 @@ php artisanserve — port=8080
 ```
 ### 第 7 步 使用請求 api
 
-#### 取得付款最高的前10的旅社
+#### -【取得付款最高的前10的旅社】
 1. http method: 
    - GET
 2. endpoint: 
@@ -69,27 +69,27 @@ php artisanserve — port=8080
                 {
                     "bnb_id": 7,
                     "bnb_name": "Fahey-Moore",
-                    "total_amount": "3559.46"
+                    "may_amount": "3559.46"
                 },
                 {
                     "bnb_id": 6,
                     "bnb_name": "Gleason, Lesch and McGlynn",
-                    "total_amount": "3305.08"
+                    "may_amount": "3305.08"
                 },
                 {
                     "bnb_id": 5,
                     "bnb_name": "Hartmann-Runolfsson",
-                    "total_amount": "1944.36"
+                    "may_amount": "1944.36"
                 },
                 {
                     "bnb_id": 3,
                     "bnb_name": "Hoppe, Spinka and Lemke",
-                    "total_amount": "1755.54"
+                    "may_amount": "1755.54"
                 },
                 {
                     "bnb_id": 4,
                     "bnb_name": "Batz-Gleason",
-                    "total_amount": "1529.36"
+                    "may_amount": "1529.36"
                 }
             ]
         }

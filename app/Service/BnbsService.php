@@ -25,7 +25,7 @@ class BnbsService
                 SELECT 
                     bnbs.id AS bnb_id, 
                     bnbs.name AS bnb_name, 
-                    SUM(orders.amount) AS total_amount
+                    SUM(orders.amount) AS may_amount
                 FROM 
                     orders orders
                 INNER JOIN 
@@ -36,7 +36,7 @@ class BnbsService
                 GROUP BY 
                     bnbs.id, bnbs.name
                 ORDER BY 
-                    total_amount DESC
+                    may_amount DESC
                 LIMIT ?
             ";
             $Data = DB::select($query, [$currency, $startDate, $endDate, $limit]);

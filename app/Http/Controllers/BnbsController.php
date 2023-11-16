@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 //Illuminate
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Http\Response;
 // Service
 use App\Service\BnbsService;
 
@@ -41,7 +40,7 @@ class BnbsController extends Controller
             ], 422);
         }
 
-        // 進行業務邏輯處理
+        // 進行邏輯處理
         $validatedData = $validator->validated();
         $results = $bnbsService->getTopBnbs(
             $validatedData['currency'],
