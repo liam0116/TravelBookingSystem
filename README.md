@@ -205,3 +205,12 @@ RESTful Web API 设计:
 比如 /top-Bnbs 或者 /getBnbsTop
 https://learn.microsoft.com/zh-cn/azure/architecture/best-practices/api-design
 ```
+Laravel 文檔:
+```
+感謝各位翻譯者 
+https://learnku.com/docs/laravel/10.x
+```
+HTTP response status code 參考:
+```
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+```
